@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#262421">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<title>Chess vs Stockfish</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<main>
+<div id="top"><b>♞ Chess vs Stockfish</b><select id="lvl" aria-label="Difficulty"></select></div>
+<div id="board"></div>
+<div id="status">Loading engine…</div>
+<div id="ev"><span id="evt">Eval: –</span><div id="bar"><i></i></div></div>
+<div id="bar2"></div>
+<div class="row">
+<button id="un">↶ Undo</button><button id="re">Redo ↷</button>
+<button id="hi">💡 Best move</button><button id="fl">⇅ Flip</button>
+</div>
+<div class="row">
+<button class="p" id="nw">New: White</button><button class="p" id="nb">New: Black</button>
+<button id="cp">Copy PGN</button>
+</div>
+<div id="moves">No moves yet.</div>
+<p class="note">Stockfish 10 (GPL, WebAssembly with a compatibility fallback) and chess.js run inside your browser. Pieces: Cburnett set (GPL). Evaluation is from White’s side: positive favours White. Your game is saved automatically on this device.</p>
+</main>
+<script src="pieces.js"></script>
+<script src="chess.js"></script>
+<script src="app.js"></script>
+<script>if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
+</body></html>
